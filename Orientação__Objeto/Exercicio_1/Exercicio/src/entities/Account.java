@@ -10,6 +10,12 @@ public class Account {
         this.holder = holder;
     }
 
+    public Account(int number, String holder, double initialDeposit) {
+        this.number = number;
+        this.holder = holder;
+        deposit(initialDeposit);
+    }
+
     public int getNumber() {
         return number;
     }
@@ -26,12 +32,12 @@ public class Account {
         return balance;
     }
 
-    public void addBalance(double balance){
-        this.balance += balance;
+    public void deposit(double amount){
+        balance += amount;
     }
 
-    public void removeBalance(double balance){
-        this.balance = this.balance - balance - 5.0;
+    public void withdraw(double amount){
+        balance -= amount + 5.00;
     }
 
     public String toString(){
